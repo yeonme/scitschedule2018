@@ -30,7 +30,7 @@ namespace SCITSchedule
         NotifyIcon ni = new NotifyIcon();
         DispatcherTimer timer = null;
         const int MAX_TIME = 15;
-        const string TITLE_DESC = " - 중복실행방지, 빠른 화면 표시, 트레이아이콘반응 180515";
+        const string TITLE_DESC = " - 트레이아이콘 복원 문제 해결, 스플리터 해결 180515";
         string titledef = "Hi " + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString()+TITLE_DESC+": ";
 
         int refTimer = MAX_TIME;
@@ -63,6 +63,10 @@ namespace SCITSchedule
             ni.MouseClick += Ni_MouseClick;
             System.Windows.Forms.ContextMenu ct = new System.Windows.Forms.ContextMenu();
             ct.MenuItems.Add("보기", (o, e) => {
+                if (WindowState == WindowState.Minimized)
+                {
+                    WindowState = WindowState.Normal;
+                }
                 Show();
                 Activate();
             });            
@@ -91,6 +95,10 @@ namespace SCITSchedule
                 }
                 else
                 {
+                    if (WindowState == WindowState.Minimized)
+                    {
+                        WindowState = WindowState.Normal;
+                    }
                     Show();
                     Activate();
                 }
@@ -104,6 +112,10 @@ namespace SCITSchedule
             }
             else
             {
+                if (WindowState == WindowState.Minimized)
+                {
+                    WindowState = WindowState.Normal;
+                }
                 Show();
                 Activate();
             }

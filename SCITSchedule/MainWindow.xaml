@@ -64,7 +64,7 @@
             <GridSplitter Grid.Column="1" HorizontalAlignment="Center" 
               VerticalAlignment="Stretch" 
               ShowsPreview="true"
-              Width="5" Background="{x:Null}"/>
+              Width="5" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
             <ListView x:Name="lvLog" HorizontalContentAlignment="Stretch" Grid.Column="2">
                 <ListView.Template>
                     <ControlTemplate>
